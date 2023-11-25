@@ -19,6 +19,10 @@ const logout = () => {
 	return signOut(auth);
 };
 
+const login = (email, password) => {
+	return signInWithEmailAndPassword(auth, email, password);
+};
+
 export const AuthContextProvider = ({ children }) => {
 	const [user, setUser] = useState({});
 
@@ -39,6 +43,7 @@ export const AuthContextProvider = ({ children }) => {
 				user,
 				createUser,
 				logout,
+				login,
 			}}
 		>
 			{children}
